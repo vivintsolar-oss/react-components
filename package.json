@@ -1,0 +1,19 @@
+{
+  "name": "storybook",
+  "version": "1.0.0",
+  "description": "Shared components library for React components",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "build": "build-storybook -c .storybook -o ./"
+  },
+  "author": "Eric Butterfield",
+  "license": "ISC",
+  "devDependencies": {
+    "@storybook/react": "^3.2.8"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
