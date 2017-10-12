@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "vstg",
+    "vstg/browser",
+    "vstg/react"
+  ]
+}

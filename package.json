@@ -1,5 +1,5 @@
 {
-  "name": "storybook",
+  "name": "react-components",
   "version": "1.0.0",
   "description": "Shared components library for React components",
   "main": "index.js",
@@ -7,12 +7,18 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build": "build-storybook -c .storybook -o ./docs"
   },
-  "author": "Eric Butterfield",
-  "license": "ISC",
+  "author": "ewbutterfield",
+  "license": "MIT",
   "devDependencies": {
-    "@storybook/react": "^3.2.8"
+    "@storybook/addon-actions": "^3.2.12",
+    "@storybook/addon-knobs": "^3.2.12",
+    "@storybook/addon-notes": "^3.2.12",
+    "@storybook/react": "^3.2.8",
+    "eslint": "^3.19.0",
+    "eslint-config-vstg": "^2.0.0"
   },
   "dependencies": {
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   }
