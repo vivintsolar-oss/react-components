@@ -14,7 +14,7 @@ module.exports = {
         loader: 'babel-loader',
         include: path.join(__dirname, './src'),
         query: {
-          presets: [ 'emotion', 'es2015', 'react' ],
+          presets: [ 'es2015', 'react' ],
         },
       },
     ],
