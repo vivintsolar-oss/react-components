@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 class VSButton extends Component {
   constructor(props) {
@@ -115,13 +114,5 @@ class VSButton extends Component {
     );
   }
 }
-
-VSButton.propTypes = {
-  color: PropTypes.string,
-  disabled: PropTypes.bool,
-  size: PropTypes.string,
-  dark: PropTypes.bool,
-  children: PropTypes.any,
-};
 
 export default VSButton;
