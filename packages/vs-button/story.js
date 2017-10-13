@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import VSButton from './index';
+import VSButton from '@vivintsolar-oss/web-vs-button';
 
 const stories = storiesOf('Button', module);
 
