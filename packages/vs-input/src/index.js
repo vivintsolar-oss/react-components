@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 class VSInput extends Component {
   borderState() {
@@ -18,6 +18,8 @@ class VSInput extends Component {
       return '#3fbfad';
     } else if (this.props.error) {
       return '#E74C3C';
+    } else if (this.props.dark) {
+      return '#ffffff';
     }
 
     return '#37404B';
@@ -35,22 +37,23 @@ class VSInput extends Component {
       },
       input: {
         width: '256px',
-        height: '48px',
         borderRadius: '4px',
         marginBottom: '8px',
         marginTop: '8px',
         padding: '16px',
         border: this.borderState(),
+        backgroundColor: 'transparent',
+        fontSize: '16px',
       },
       label: {
         color: this.labelState(),
         fontSize: '12px',
-        fontFamily: 'IntCircularPro',
+        fontFamily: 'IntCircularProBook',
       },
       error: {
         color: '#E74C3C',
         fontSize: '12px',
-        fontFamily: 'IntCircularPro',
+        fontFamily: 'IntCircularProBook',
       },
     };
 
@@ -66,13 +69,14 @@ class VSInput extends Component {
   }
 }
 
-// VSInput.propTypes = {
-//   error: PropTypes.string,
-//   disable: PropTypes.bool,
-//   active: PropTypes.bool,
-//   label: PropTypes.string,
-//   reference: PropTypes.function,
-// };
+VSInput.propTypes = {
+  error: PropTypes.string,
+  disable: PropTypes.bool,
+  active: PropTypes.bool,
+  dark: PropTypes.bool,
+  label: PropTypes.string,
+  reference: PropTypes.function,
+};
 
 VSInput.defaultProps = {
   error: null,
