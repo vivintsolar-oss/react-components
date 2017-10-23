@@ -14,15 +14,12 @@ module.exports = {
         loader: 'babel-loader',
         include: path.join(__dirname, './src'),
         query: {
-          presets: [ 'es2015', 'react' ],
+          presets: [ 'env', 'react' ],
         },
       },
     ],
   },
-  plugins: [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
-  ],
+  plugins: [ new webpack.optimize.UglifyJsPlugin() ],
   resolve: {
     extensions: [ '.js' ],
   },

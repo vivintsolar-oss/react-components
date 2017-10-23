@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import VSInput from './src/index';
 
-const stories = storiesOf('Button', module);
+const stories = storiesOf('Input', module);
 
 stories.addDecorator(withKnobs);
 

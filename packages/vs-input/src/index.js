@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class VSInput extends Component {
   borderState() {
@@ -66,13 +66,13 @@ class VSInput extends Component {
   }
 }
 
-VSInput.propTypes = {
-  error: PropTypes.string,
-  disable: PropTypes.bool,
-  active: PropTypes.bool,
-  label: PropTypes.string,
-  reference: PropTypes.function.isRequired,
-};
+// VSInput.propTypes = {
+//   error: PropTypes.string,
+//   disable: PropTypes.bool,
+//   active: PropTypes.bool,
+//   label: PropTypes.string,
+//   reference: PropTypes.function,
+// };
 
 VSInput.defaultProps = {
   error: null,
