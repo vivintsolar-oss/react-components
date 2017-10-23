@@ -10,17 +10,17 @@
   "author": "ewbutterfield",
   "license": "MIT",
   "devDependencies": {
-    "@storybook/addon-actions": "^3.2.12",
-    "@storybook/addon-knobs": "^3.2.12",
-    "@storybook/addon-notes": "^3.2.12",
-    "@storybook/react": "^3.2.8",
-    "eslint": "^3.19.0",
-    "eslint-config-vstg": "^2.0.0",
+    "@storybook/addon-actions": "^3.2.13",
+    "@storybook/addon-knobs": "^3.2.13",
+    "@storybook/addon-notes": "^3.2.13",
+    "@storybook/react": "^3.2.13",
+    "eslint": "^4.9.0",
+    "eslint-config-vstg": "^2.2.1",
     "lerna": "^2.4.0"
   },
   "dependencies": {
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   }
 }

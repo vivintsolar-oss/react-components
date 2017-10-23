@@ -13,7 +13,7 @@ stories.add('Primary', () => {
       disabled={ boolean('Disabled', false) }
       size={ text('Size (small/medium/large)', 'small') }
     >
-      { text('Text', 'Primary') }
+      {text('Text', 'Primary')}
     </VSButton>
   );
 });
@@ -26,7 +26,7 @@ stories.add('Primary-Dark', () => {
         size={ text('Size (small/medium/large)', 'small') }
         dark={ boolean('Dark', true) }
       >
-        { text('Text', 'Primary-Dark') }
+        {text('Text', 'Primary-Dark')}
       </VSButton>
     </div>
   );
