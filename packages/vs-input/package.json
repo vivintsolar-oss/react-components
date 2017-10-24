@@ -1,35 +1,38 @@
 {
   "name": "@vivintsolar-oss/web-vs-input",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Input for VSLR UI kit",
   "private": false,
   "author": "tcasey",
-  "main": "./index.js",
+  "main": "build/index.js",
+  "files": ["build"],
+  "scripts": {
+    "build": "make build SRC=./src",
+    "prepublish": "make build SRC=./src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vivintsolar-oss/react-components.git"
   },
   "license": "MIT",
-  "dependencies": {
-    "prop-types": "^15.6.0",
-    "react": "^16.0.0"
-  },
   "bugs": {
     "url": "https://github.com/vivintsolar-oss/react-components/issues"
   },
   "homepage": "https://github.com/vivintsolar-oss/react-components#readme",
-  "scripts": {
-    "prepublish": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "devDependencies": {
+    "react-fatigue-dev": "github:tj/react-fatigue-dev",
+    "react": "^15.0.0-0 || ^16.0.0-0",
+    "react-tools": "^0.10.0",
+    "regenerator-runtime": "^0.10.5"
+  },
+  "peerDependencies": {
+    "react": "^15.0.0-0 || ^16.0.0-0"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-react": "^6.24.1",
-    "webpack": "^3.7.1"
   }
 }
