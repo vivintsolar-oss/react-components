@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -60,13 +62,23 @@ var VSInput = function (_Component) {
   }, {
     key: 'widthState',
     value: function widthState() {
-      if (this.props.long) {
+      var size = this.props.size;
+
+
+      if (size === 'large') {
         return '544px';
-      } else if (this.props.short) {
+      } else if (size === 'medium') {
+        return '256px';
+      } else if (size === 'small') {
         return '160px';
       }
-
-      return '256px';
+    }
+  }, {
+    key: 'heightState',
+    value: function heightState() {
+      if (this.props.size) {
+        return '48px';
+      }
     }
   }, {
     key: 'render',
@@ -88,7 +100,7 @@ var VSInput = function (_Component) {
         },
         input: {
           width: this.widthState(),
-          height: '48px',
+          height: this.heightState(),
           borderRadius: '4px',
           marginBottom: '8px',
           marginTop: '8px',
@@ -100,33 +112,29 @@ var VSInput = function (_Component) {
         label: {
           color: this.labelState(),
           fontSize: '12px',
-          fontFamily: 'IntCircularPro, IntCircularProBook, Arial'
+          fontFamily: 'IntCircularPro, Arial'
         },
         error: {
           color: '#E74C3C',
           fontSize: '12px',
-          fontFamily: 'IntCircularPro, IntCircularProBook, Arial'
+          fontFamily: 'IntCircularPro, Arial'
         }
       };
 
       return _react2.default.createElement(
-        'div',
-        { style: styles.wrapper },
+        'label',
+        { htmlFor: name, style: styles.wrapper },
         _react2.default.createElement(
-          'div',
-          { style: styles.labelWrapper },
-          _react2.default.createElement(
-            'span',
-            { style: styles.label },
-            label
-          )
+          'span',
+          { style: styles.label },
+          label
         ),
-        _react2.default.createElement('input', {
+        _react2.default.createElement('input', _extends({}, this.props, {
           style: styles.input,
           type: 'text',
           onChange: handleChange,
           name: name
-        }),
+        })),
         error ? _react2.default.createElement(
           'span',
           { style: styles.error },
@@ -144,8 +152,7 @@ VSInput.propTypes = {
   disable: _propTypes2.default.bool,
   active: _propTypes2.default.bool,
   dark: _propTypes2.default.bool,
-  long: _propTypes2.default.bool,
-  short: _propTypes2.default.bool,
+  size: _propTypes2.default.string,
   label: _propTypes2.default.string,
   name: _propTypes2.default.string,
   handleChange: _propTypes2.default.function
@@ -155,8 +162,6 @@ VSInput.defaultProps = {
   error: null,
   disable: false,
   active: false,
-  long: false,
-  short: false,
   label: 'label'
 };
 
