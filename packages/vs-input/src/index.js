@@ -61,10 +61,6 @@ class VSInput extends Component {
       wrapper: {
         display: 'grid',
       },
-      labelWrapper: {
-        width: '100%',
-        marginTop: ELEMENT_PADDING,
-      },
       input: {
         width: this.widthState(),
         height: this.heightState(),
@@ -80,11 +76,13 @@ class VSInput extends Component {
         color: this.labelState(),
         fontSize: LABEL_SIZE,
         fontFamily: FONT,
+        display: 'flex',
       },
       error: {
         color: ERROR,
         fontSize: LABEL_SIZE,
         fontFamily: FONT,
+        display: 'flex',
       },
     };
 
