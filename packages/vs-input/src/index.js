@@ -34,15 +34,11 @@ class VSInput extends Component {
     } else if (size === 'small') {
       return '160px';
     }
-
-    return '100%';
   }
   heightState() {
-    if (this.props.size === 'medium') {
+    if (this.props.size) {
       return '48px';
     }
-
-    return '100%';
   }
   render() {
     const { error, label, name, handleChange } = this.props;
@@ -79,18 +75,17 @@ class VSInput extends Component {
     };
 
     return (
-      <div style={ styles.wrapper }>
-        <div style={ styles.labelWrapper }>
-          <span style={ styles.label }>{label}</span>
-        </div>
+      <label htmlFor={ name } style={ styles.wrapper }>
+        <span style={ styles.label }>{label}</span>
         <input
+          { ...this.props }
           style={ styles.input }
           type="text"
           onChange={ handleChange }
           name={ name }
         />
         {error ? <span style={ styles.error }>{error}</span> : null}
-      </div>
+      </label>
     );
   }
 }
