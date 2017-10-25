@@ -58,12 +58,24 @@ var VSInput = function (_Component) {
       return '#37404B';
     }
   }, {
+    key: 'widthState',
+    value: function widthState() {
+      if (this.props.long) {
+        return '544px';
+      } else if (this.props.short) {
+        return '160px';
+      }
+
+      return '256px';
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props,
           error = _props.error,
           label = _props.label,
-          reference = _props.reference;
+          name = _props.name,
+          handleChange = _props.handleChange;
 
 
       var styles = {
@@ -75,7 +87,8 @@ var VSInput = function (_Component) {
           marginTop: '8px'
         },
         input: {
-          width: '256px',
+          width: this.widthState(),
+          height: '48px',
           borderRadius: '4px',
           marginBottom: '8px',
           marginTop: '8px',
@@ -87,12 +100,12 @@ var VSInput = function (_Component) {
         label: {
           color: this.labelState(),
           fontSize: '12px',
-          fontFamily: 'IntCircularProBook'
+          fontFamily: 'IntCircularPro, IntCircularProBook, Arial'
         },
         error: {
           color: '#E74C3C',
           fontSize: '12px',
-          fontFamily: 'IntCircularProBook'
+          fontFamily: 'IntCircularPro, IntCircularProBook, Arial'
         }
       };
 
@@ -108,7 +121,12 @@ var VSInput = function (_Component) {
             label
           )
         ),
-        _react2.default.createElement('input', { style: styles.input, type: 'text', ref: reference }),
+        _react2.default.createElement('input', {
+          style: styles.input,
+          type: 'text',
+          onChange: handleChange,
+          name: name
+        }),
         error ? _react2.default.createElement(
           'span',
           { style: styles.error },
@@ -126,14 +144,19 @@ VSInput.propTypes = {
   disable: _propTypes2.default.bool,
   active: _propTypes2.default.bool,
   dark: _propTypes2.default.bool,
+  long: _propTypes2.default.bool,
+  short: _propTypes2.default.bool,
   label: _propTypes2.default.string,
-  reference: _propTypes2.default.function
+  name: _propTypes2.default.string,
+  handleChange: _propTypes2.default.function
 };
 
 VSInput.defaultProps = {
   error: null,
   disable: false,
   active: false,
+  long: false,
+  short: false,
   label: 'label'
 };
 

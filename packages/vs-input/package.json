@@ -1,6 +1,6 @@
 {
   "name": "@vivintsolar-oss/web-vs-input",
-  "version": "1.0.2",
+  "version": "1.1.2",
   "description": "Input for VSLR UI kit",
   "private": false,
   "author": "tcasey",
@@ -20,9 +20,7 @@
     "url": "https://github.com/vivintsolar-oss/react-components/issues"
   },
   "homepage": "https://github.com/vivintsolar-oss/react-components#readme",
-  "dependencies": {
-    "prop-types": "^15.6.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "react-fatigue-dev": "github:tj/react-fatigue-dev",
     "react": "^15.0.0-0 || ^16.0.0-0",
@@ -30,7 +28,8 @@
     "regenerator-runtime": "^0.10.5"
   },
   "peerDependencies": {
-    "react": "^15.0.0-0 || ^16.0.0-0"
+    "react": "^15.0.0-0 || ^16.0.0-0",
+    "prop-types": "^15.6.0"
   },
   "publishConfig": {
     "access": "public"
