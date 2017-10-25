@@ -24,8 +24,28 @@ class VSInput extends Component {
 
     return '#37404B';
   }
+  widthState() {
+    const { size } = this.props;
+
+    if (size === 'large') {
+      return '544px';
+    } else if (size === 'medium') {
+      return '256px';
+    } else if (size === 'small') {
+      return '160px';
+    }
+
+    return '100%';
+  }
+  heightState() {
+    if (this.props.size === 'medium') {
+      return '48px';
+    }
+
+    return '100%';
+  }
   render() {
-    const { error, label, reference } = this.props;
+    const { error, label, name, handleChange } = this.props;
 
     const styles = {
       wrapper: {
@@ -36,7 +56,8 @@ class VSInput extends Component {
         marginTop: '8px',
       },
       input: {
-        width: '256px',
+        width: this.widthState(),
+        height: this.heightState(),
         borderRadius: '4px',
         marginBottom: '8px',
         marginTop: '8px',
@@ -48,12 +69,12 @@ class VSInput extends Component {
       label: {
         color: this.labelState(),
         fontSize: '12px',
-        fontFamily: 'IntCircularProBook',
+        fontFamily: 'IntCircularPro, Arial',
       },
       error: {
         color: '#E74C3C',
         fontSize: '12px',
-        fontFamily: 'IntCircularProBook',
+        fontFamily: 'IntCircularPro, Arial',
       },
     };
 
@@ -62,7 +83,12 @@ class VSInput extends Component {
         <div style={ styles.labelWrapper }>
           <span style={ styles.label }>{label}</span>
         </div>
-        <input style={ styles.input } type="text" ref={ reference } />
+        <input
+          style={ styles.input }
+          type="text"
+          onChange={ handleChange }
+          name={ name }
+        />
         {error ? <span style={ styles.error }>{error}</span> : null}
       </div>
     );
@@ -74,8 +100,10 @@ VSInput.propTypes = {
   disable: PropTypes.bool,
   active: PropTypes.bool,
   dark: PropTypes.bool,
+  size: PropTypes.string,
   label: PropTypes.string,
-  reference: PropTypes.function,
+  name: PropTypes.string,
+  handleChange: PropTypes.function,
 };
 
 VSInput.defaultProps = {

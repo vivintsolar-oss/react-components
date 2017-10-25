@@ -81,9 +81,11 @@ class VSButton extends Component {
       return '133px';
     } else if (this.props.size === 'medium') {
       return '77px';
+    } else if (this.props.size === 'small') {
+      return '21px';
     }
 
-    return '21px';
+    return '100%';
   }
 
   render() {
@@ -93,9 +95,10 @@ class VSButton extends Component {
       textTransform: 'uppercase',
       border: 'none',
       padding: `15px ${ this.sizeState() }`,
+      height: '48px',
       borderRadius: '4px',
       fontSize: '16px',
-      fontFamily: 'IntCircularProBook',
+      fontFamily: 'IntCircularPro, Arial',
       WebkitFontSmoothing: 'antialiased',
       cursor: 'pointer',
     };
@@ -109,7 +112,7 @@ class VSButton extends Component {
         onMouseUp={ this.toggleActive }
         disabled={ this.props.disabled }
       >
-        { this.props.children }
+        {this.props.children}
       </button>
     );
   }

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "build": "build-storybook -c .storybook -o ./docs"
+    "build": "build-storybook -c .storybook -o ./docs",
+    "prepare-release": "npm run build && lerna updated",
+    "release": "npm run prepare-release && lerna publish --exact"
   },
   "author": "ewbutterfield",
   "license": "MIT",
@@ -16,11 +18,10 @@
     "@storybook/react": "^3.2.13",
     "eslint": "^4.9.0",
     "eslint-config-vstg": "^2.2.1",
+    "prop-types": "^15.6.0",
+    "react": "^15.0.0-0 || ^16.0.0-0",
+    "react-dom": "^15.0.0-0 || ^16.0.0-0",
     "lerna": "^2.4.0"
   },
-  "dependencies": {
-    "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
-  }
+  "dependencies": {}
 }
