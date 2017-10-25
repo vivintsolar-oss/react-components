@@ -69,12 +69,12 @@ class VSInput extends Component {
       label: {
         color: this.labelState(),
         fontSize: '12px',
-        fontFamily: 'IntCircularPro, IntCircularProBook, Arial',
+        fontFamily: 'IntCircularPro, Arial',
       },
       error: {
         color: '#E74C3C',
         fontSize: '12px',
-        fontFamily: 'IntCircularPro, IntCircularProBook, Arial',
+        fontFamily: 'IntCircularPro, Arial',
       },
     };
 

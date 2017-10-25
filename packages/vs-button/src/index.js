@@ -98,7 +98,7 @@ class VSButton extends Component {
       height: '48px',
       borderRadius: '4px',
       fontSize: '16px',
-      fontFamily: 'IntCircularPro, IntCircularProBook, Arial',
+      fontFamily: 'IntCircularPro, Arial',
       WebkitFontSmoothing: 'antialiased',
       cursor: 'pointer',
     };
