@@ -110,9 +110,11 @@ var VSButton = function (_Component) {
         return '133px';
       } else if (this.props.size === 'medium') {
         return '77px';
+      } else if (this.props.size === 'small') {
+        return '21px';
       }
 
-      return '21px';
+      return '100%';
     }
   }, {
     key: 'render',
