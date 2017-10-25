@@ -1,8 +1,8 @@
 'use strict';
 
 var ORANGE = '#FF8200';
-var BLACK = '#1F2123';
-var DARK_GRAY = '#4a4a4a';
+var BLACK = '#18191A';
+var DARK_GRAY = '#37404B';
 var MEDIUM_GRAY = '#656769';
 var LIGHT_GRAY = '#979797';
 var BORDER_GRAY = '#D9DADB';
@@ -11,14 +11,17 @@ var OFF_WHITE = '#f7f8f8';
 var WHITE = '#ffffff';
 var GREEN = '#3FBFAD';
 var BLUE = '#57C1E8';
-var LOGO_ORANGE = '#FF4E00';
 var ERROR = '#E74C3C';
-var PRIMARY = BLUE;
 
 var OUTER_PADDING = '16px';
-var INNER_PADDING = '24px';
+var INNER_PADDING = '16px';
 var EDGE_PADDING = '16px';
-var ICON_GAP = '8px';
+var ELEMENT_PADDING = '8px';
+var BORDER_RADIUS = '4px';
+var LABEL_SIZE = '12px';
+var FONT_SIZE = '16px';
+
+var FONT = 'IntCircularPro, Arial';
 
 module.exports = {
   ORANGE: ORANGE,
@@ -32,11 +35,13 @@ module.exports = {
   WHITE: WHITE,
   GREEN: GREEN,
   BLUE: BLUE,
-  LOGO_ORANGE: LOGO_ORANGE,
   ERROR: ERROR,
-  PRIMARY: PRIMARY,
   OUTER_PADDING: OUTER_PADDING,
   INNER_PADDING: INNER_PADDING,
   EDGE_PADDING: EDGE_PADDING,
-  ICON_GAP: ICON_GAP
+  ELEMENT_PADDING: ELEMENT_PADDING,
+  BORDER_RADIUS: BORDER_RADIUS,
+  LABEL_SIZE: LABEL_SIZE,
+  FONT_SIZE: FONT_SIZE,
+  FONT: FONT
 };
