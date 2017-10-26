@@ -1,0 +1,23 @@
+{
+  "name": "@vivintsolar-oss/web-vs-style",
+  "version": "1.0.4",
+  "description": "Styles for VSLR UI kit",
+  "private": false,
+  "author": "tcasey",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivintsolar-oss/react-components.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vivintsolar-oss/react-components/issues"
+  },
+  "homepage": "https://github.com/vivintsolar-oss/react-components#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

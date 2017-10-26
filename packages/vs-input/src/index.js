@@ -1,28 +1,42 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import {
+  ERROR,
+  GREEN,
+  DARK_GRAY,
+  LIGHT_GRAY,
+  BORDER_GRAY,
+  WHITE,
+  BORDER_RADIUS,
+  ELEMENT_PADDING,
+  INNER_PADDING,
+  LABEL_SIZE,
+  FONT_SIZE,
+  FONT,
+} from '@vivintsolar-oss/web-vs-style';
 
 class VSInput extends Component {
   borderState() {
     if (this.props.disable) {
-      return '1px dashed #8e8e93';
+      return `1px dashed ${ LIGHT_GRAY }`;
     } else if (this.props.active) {
-      return '2px solid #3fbfad';
+      return `2px solid ${ GREEN }`;
     } else if (this.props.error) {
-      return '2px solid #E74C3C';
+      return `2px solid ${ ERROR }`;
     }
 
-    return '1px solid #D9DADB';
+    return `1px solid ${ BORDER_GRAY }`;
   }
   labelState() {
     if (this.props.active) {
-      return '#3fbfad';
+      return GREEN;
     } else if (this.props.error) {
-      return '#E74C3C';
+      return ERROR;
     } else if (this.props.dark) {
-      return '#ffffff';
+      return WHITE;
     }
 
-    return '#37404B';
+    return DARK_GRAY;
   }
   widthState() {
     const { size } = this.props;
@@ -41,36 +55,34 @@ class VSInput extends Component {
     }
   }
   render() {
-    const { error, label, name, handleChange } = this.props;
+    const { error, label, name, className, handleChange } = this.props;
 
     const styles = {
       wrapper: {
         display: 'grid',
       },
-      labelWrapper: {
-        width: '100%',
-        marginTop: '8px',
-      },
       input: {
         width: this.widthState(),
         height: this.heightState(),
-        borderRadius: '4px',
-        marginBottom: '8px',
-        marginTop: '8px',
-        padding: '16px',
+        borderRadius: BORDER_RADIUS,
+        marginBottom: ELEMENT_PADDING,
+        marginTop: ELEMENT_PADDING,
+        padding: INNER_PADDING,
         border: this.borderState(),
         backgroundColor: 'transparent',
-        fontSize: '16px',
+        fontSize: FONT_SIZE,
       },
       label: {
         color: this.labelState(),
-        fontSize: '12px',
-        fontFamily: 'IntCircularPro, Arial',
+        fontSize: LABEL_SIZE,
+        fontFamily: FONT,
+        display: 'flex',
       },
       error: {
-        color: '#E74C3C',
-        fontSize: '12px',
-        fontFamily: 'IntCircularPro, Arial',
+        color: ERROR,
+        fontSize: LABEL_SIZE,
+        fontFamily: FONT,
+        display: 'flex',
       },
     };
 
@@ -78,7 +90,7 @@ class VSInput extends Component {
       <label htmlFor={ name } style={ styles.wrapper }>
         <span style={ styles.label }>{label}</span>
         <input
-          { ...this.props }
+          className={ className }
           style={ styles.input }
           type="text"
           onChange={ handleChange }
@@ -98,6 +110,7 @@ VSInput.propTypes = {
   size: PropTypes.string,
   label: PropTypes.string,
   name: PropTypes.string,
+  className: PropTypes.string,
   handleChange: PropTypes.function,
 };
 

@@ -4,8 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -15,6 +13,8 @@ var _react2 = _interopRequireDefault(_react);
 var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _webVsStyle = require('@vivintsolar-oss/web-vs-style');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37,27 +37,27 @@ var VSInput = function (_Component) {
     key: 'borderState',
     value: function borderState() {
       if (this.props.disable) {
-        return '1px dashed #8e8e93';
+        return '1px dashed ' + _webVsStyle.LIGHT_GRAY;
       } else if (this.props.active) {
-        return '2px solid #3fbfad';
+        return '2px solid ' + _webVsStyle.GREEN;
       } else if (this.props.error) {
-        return '2px solid #E74C3C';
+        return '2px solid ' + _webVsStyle.ERROR;
       }
 
-      return '1px solid #D9DADB';
+      return '1px solid ' + _webVsStyle.BORDER_GRAY;
     }
   }, {
     key: 'labelState',
     value: function labelState() {
       if (this.props.active) {
-        return '#3fbfad';
+        return _webVsStyle.GREEN;
       } else if (this.props.error) {
-        return '#E74C3C';
+        return _webVsStyle.ERROR;
       } else if (this.props.dark) {
-        return '#ffffff';
+        return _webVsStyle.WHITE;
       }
 
-      return '#37404B';
+      return _webVsStyle.DARK_GRAY;
     }
   }, {
     key: 'widthState',
@@ -87,6 +87,7 @@ var VSInput = function (_Component) {
           error = _props.error,
           label = _props.label,
           name = _props.name,
+          className = _props.className,
           handleChange = _props.handleChange;
 
 
@@ -94,30 +95,28 @@ var VSInput = function (_Component) {
         wrapper: {
           display: 'grid'
         },
-        labelWrapper: {
-          width: '100%',
-          marginTop: '8px'
-        },
         input: {
           width: this.widthState(),
           height: this.heightState(),
-          borderRadius: '4px',
-          marginBottom: '8px',
-          marginTop: '8px',
-          padding: '16px',
+          borderRadius: _webVsStyle.BORDER_RADIUS,
+          marginBottom: _webVsStyle.ELEMENT_PADDING,
+          marginTop: _webVsStyle.ELEMENT_PADDING,
+          padding: _webVsStyle.INNER_PADDING,
           border: this.borderState(),
           backgroundColor: 'transparent',
-          fontSize: '16px'
+          fontSize: _webVsStyle.FONT_SIZE
         },
         label: {
           color: this.labelState(),
-          fontSize: '12px',
-          fontFamily: 'IntCircularPro, Arial'
+          fontSize: _webVsStyle.LABEL_SIZE,
+          fontFamily: _webVsStyle.FONT,
+          display: 'flex'
         },
         error: {
-          color: '#E74C3C',
-          fontSize: '12px',
-          fontFamily: 'IntCircularPro, Arial'
+          color: _webVsStyle.ERROR,
+          fontSize: _webVsStyle.LABEL_SIZE,
+          fontFamily: _webVsStyle.FONT,
+          display: 'flex'
         }
       };
 
@@ -129,12 +128,13 @@ var VSInput = function (_Component) {
           { style: styles.label },
           label
         ),
-        _react2.default.createElement('input', _extends({}, this.props, {
+        _react2.default.createElement('input', {
+          className: className,
           style: styles.input,
           type: 'text',
           onChange: handleChange,
           name: name
-        })),
+        }),
         error ? _react2.default.createElement(
           'span',
           { style: styles.error },
@@ -155,6 +155,7 @@ VSInput.propTypes = {
   size: _propTypes2.default.string,
   label: _propTypes2.default.string,
   name: _propTypes2.default.string,
+  className: _propTypes2.default.string,
   handleChange: _propTypes2.default.function
 };
 
